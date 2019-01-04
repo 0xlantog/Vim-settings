@@ -18,7 +18,6 @@ Plugin 'nvie/vim-flake8'
 Plugin 'hdima/python-syntax'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'kien/ctrlp.vim'
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'mattn/emmet-vim'
 Plugin 'dsawardekar/wordpress.vim'
@@ -26,9 +25,6 @@ Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
 Plugin 'captbaritone/better-indent-support-for-php-with-html'
 Plugin 'vim-scripts/indentpython.vim'
-Plugin 'jnurmine/Zenburn'
-Plugin 'NLKNguyen/papercolor-theme'
-Plugin 'pangloss/vim-javascript'
 
 call vundle#end()            " required
 filetype plugin indent on 
@@ -39,9 +35,8 @@ set backspace=indent,eol,start
 
 set term=screen-256color
 set background=dark
-colors PaperColor
+
 autocmd BufRead,BufNewFile *.py let python_highlight_all=1
-let g:Powerline_symbols = 'fancy'
 
 set splitbelow
 set splitright
