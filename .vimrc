@@ -49,7 +49,6 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " Enable folding
-set foldmethod=indent
 set foldlevel=99
 
 " Enable folding with the spacebar
