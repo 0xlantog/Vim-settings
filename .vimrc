@@ -11,20 +11,21 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-Plugin 'tmhedberg/SimpylFold'
 Bundle 'Valloric/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'nvie/vim-flake8'
 Plugin 'hdima/python-syntax'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'kien/ctrlp.vim'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'mattn/emmet-vim'
-Plugin 'dsawardekar/wordpress.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
-Plugin 'captbaritone/better-indent-support-for-php-with-html'
 Plugin 'vim-scripts/indentpython.vim'
+
+
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
 
 call vundle#end()            " required
 filetype plugin indent on 
@@ -76,8 +77,4 @@ autocmd FileType text set textwidth=140
 
 set encoding=utf-8
 
-let g:ycm_autoclose_preview_window_after_completion=1
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-let g:NERDSpaceDelims = 1
-let g:NERDCompactSexyComs = 1
 
