@@ -23,7 +23,7 @@ libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev autoconf libxcb-xrm0 libxcb
 && make && sudo make install
 
 # Background
-curl -o ~/Pictures/wallpaper.jpg http://www.wallpaperup.com/uploads/wallpapers/2015/04/08/658128/6dce3e6d31eff2996064a7a2334b906f.jpg
+curl -o ~/Pictures/wallpaper.jpg https://wallpapercave.com/wp/SGiOGhl.jpg
 
 # Configure i3
 mkdir -p ~/.config/{i3,i3status,compton}
