@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt install vim tmux git curl network-manager network-manager-gnome xorg pulseaudio dmenu compton -y
+sudo apt install vim tmux git curl network-manager network-manager-gnome xorg pulseaudio dmenu compton feh ranger -y
 
 # My config files
 curl -o ~/.tmux.conf https://raw.githubusercontent.com/0xlantog/terminal-tools-settings/master/.tmux.conf
