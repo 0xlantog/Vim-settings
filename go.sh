@@ -1,18 +1,25 @@
 #!/bin/bash
 
-# My file depends of this
 sudo apt install vim tmux git curl -y
 
 # My config files
 curl -o ~/.tmux.conf https://raw.githubusercontent.com/0xlantog/terminal-tools-settings/master/.tmux.conf
 curl -o ~/.vimrc https://raw.githubusercontent.com/0xlantog/terminal-tools-settings/master/.vimrc
+
+cd $HOME
+if [ ! -d ".vim" ]; then
+	mkdir -p .vim
+fi
+
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # Fonts
 sudo apt install fonts-roboto fonts-inconsolata -y
 
 # I3
-sudo apt install i3 i3wm i3status i3lock compton feh -y
+sudo apt install i3 i3wm i3status i3lock compton feh rxvt-unicde-256color -y
+
+sudo chmod 777 /opt/ && cd /opt/
 
 # Gaps
 sudo apt install git libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev \
@@ -22,8 +29,14 @@ libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev autoconf libxcb-xrm0 libxcb
 && rm -rf build/ && mkdir -p build && cd build/ && ../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers \
 && make && sudo make install
 
+cd $HOME
+
+if [ ! -d "Wallpapers" ]; then
+	mkdir Wallpapers && cd Wallpapers
+fi
+
 # Background
-curl -o ~/Pictures/wallpaper.jpg https://wallpapercave.com/wp/SGiOGhl.jpg
+curl -o wallpaper.jpg https://wallpapercave.com/wp/SGiOGhl.jpg
 
 # Configure i3
 mkdir -p ~/.config/{i3,i3status,compton}
@@ -31,4 +44,3 @@ mkdir -p ~/.config/{i3,i3status,compton}
 curl -o ~/.config/i3/config https://raw.githubusercontent.com/0xlantog/terminal-tools-settings/master/i3-config
 mkdir ~/.config/i3status/config && curl -o ~/.config/i3status/config/i3status.conf \
 https://raw.githubusercontent.com/0xlantog/terminal-tools-settings/master/i3-status.conf
-
