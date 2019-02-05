@@ -44,3 +44,17 @@ mkdir -p ~/.config/{i3,i3status,compton}
 curl -o ~/.config/i3/config https://raw.githubusercontent.com/0xlantog/terminal-tools-settings/master/i3-config
 mkdir ~/.config/i3status/config && curl -o ~/.config/i3status/config/i3status.conf \
 https://raw.githubusercontent.com/0xlantog/terminal-tools-settings/master/i3-status.conf
+
+# For Pwn and Rev
+sudo apt install gdb ltrace strace
+git clone https://github.com/longld/peda.git /opt/peda
+echo "set disassembly-flavor intel\nsource /opt/peda/peda.py" > ~/.gdbinit
+
+# Bash case insensitive
+echo "set completion-ignore-case on" > ~/.inputrc
+
+# Bash profile
+curl -o ~/.bashrc https://raw.githubusercontent.com/0xlantog/terminal-tools-settings/master/.bashrc
+
+# Firefox
+sudo apt-get install firefox-esr
