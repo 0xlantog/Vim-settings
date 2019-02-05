@@ -239,5 +239,5 @@ bar {
 	height 25
 }
 
-# Rice
+# Background
 exec_always feh --bg-scale /home/giw/Wallpapers/wallpaper.jpg
