@@ -61,3 +61,6 @@ sudo apt-get install firefox-esr -y
 
 # Colors of urxvt
 curl -o ~/.Xdefaults https://raw.githubusercontent.com/0xlantog/terminal-tools-settings/master/.Xresources
+
+# Compton
+curl -o ~/.config/compton.conf https://raw.githubusercontent.com/0xlantog/terminal-tools-settings/master/compton.conf
