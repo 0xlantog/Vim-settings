@@ -1,32 +1,33 @@
 set $mod Mod4
 
-# Love you compton
-exec --no-startup-id compton --config ~/.config/compton/compton.conf -b
-
-#SAKUSA THEME
+# Network Manager
+exec --no-startup-id /usr/bin/nm-applet
+# Transperency
+exec --no-startup-id compton --config ~/.config/compton.conf -b
 
 # set color variables
 # # optional theme colorscheme
-set $grey                #334455
-set $magenta             #ddbbcc
-set $blue                #557788
-set $cyan                #22ddcc
-set $black               #334455
-set $white               #aacccc
+set $grey                #212121
+set $valencia            #e64a19
+set $magenta             #a673a6
+set $blue                #7182a8
+set $cyan                #6da3a1
+set $black               #000000
+set $white               #b7bbbd
 set $yellow              #dd9933
-set $red                 #aa5566
-set $green               #779988
+set $red                 #aa0e50
+set $green               #1dcc9f
 
 # theme colors
-set $bg-color            #334455
-set $inactive-bg-color   #334455
-set $text-color          #aacccc
+set $bg-color            #212121
+set $inactive-bg-color   #334456
+set $text-color          #ffffff
 set $inactive-text-color #557788
-set $urgent-bg-color     #ee3355
+set $urgent-bg-color     #e64a19
 
 # set window colors
 # class                 border              background         text                 indicator
-client.focused          $bg-color           $bg-color          $white               $bg-color
+client.focused          $bg-color           $bg-color          $white               $blue
 client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color $bg-color
 client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color $bg-color
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $bg-color
@@ -38,16 +39,15 @@ client.background       $bg-color
 font pango:System San Francisco Display 10
 
 # i3-gaps
-for_window [class="^.*"] border pixel 2
-gaps inner 15
-gaps outer 15
-
+for_window [class="^.*"] border pixel 1
+gaps inner 10
+gaps outer 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+p kill
@@ -70,6 +70,8 @@ bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle # mute sound
 ## [...]
 exec --no-startup-id pulseaudio
 
+# Browser
+bindsym $mod+n exec firefox
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+Shift+h move left 30
@@ -85,8 +87,10 @@ bindsym $mod+Shift+l move right 30
 
 
 bindsym $mod+minus      gaps outer current plus 5
-bindsym $mod+plus gaps outer current minus 5
+bindsym $mod+plus       gaps outer current minus 5
 
+# Move workspaces
+bindsym $mod+less move workspace to output left
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -101,7 +105,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+v layout toggle split
+
+# Toggle
+bindsym $mod+t split toggle
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -109,13 +116,11 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
-
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+Shift+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -128,10 +133,10 @@ bindsym $mod+a focus parent
 set $ws1 "1:"
 set $ws2 "2:"
 set $ws3 "3:"
-set $ws4 "4:VBox"
-set $ws5 "5:"
+set $ws4 "4:"
+set $ws5 "5:"
 set $ws6 "6"
-set $ws7 "7"
+set $ws7 "7:"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
@@ -161,9 +166,9 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 
-assign [class="Gnome-terminal"] $ws1
 assign [class="Firefox-esr"] $ws2
 assign [class="VirtualBox Manager"] $ws4
+assign [class="Zathura"] $ws7
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload
@@ -200,12 +205,18 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Resize with keys
+bindsym $mod+y    resize shrink width 10px or 10ppt
+bindsym $mod+u    resize shrink height 10px or 10ppt
+bindsym $mod+i    resize grow width 10px or 10ppt
+bindsym $mod+o    resize grow width 10px or 10ppt
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
 	# start using custom config file (full path)
 	status_command       i3status -c ~/.config/i3status/config/i3status.conf
-	tray_padding         3
+	tray_padding         5
 	font pango:Roboto    9
 
 	colors {
@@ -217,7 +228,7 @@ bar {
 		# type             border      backgr.     font
 		focused_workspace  $grey       $white      $black
 		active_workspace   $grey       $white      $black
-		inactive_workspace $grey       $black      $white
+		inactive_workspace $cyan       $black      $white
 		urgent_workspace   $valencia   $valencia   $black
 	}
 
@@ -229,4 +240,4 @@ bar {
 }
 
 # Rice
-exec_always feh --bg-scale /home/giw/Pictures/wallpaper.jpg
+exec_always feh --bg-scale /home/giw/Wallpapers/wallpaper.jpg
