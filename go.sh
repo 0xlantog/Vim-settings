@@ -58,3 +58,6 @@ curl -o ~/.Xdefaults https://raw.githubusercontent.com/0xlantog/terminal-tools-s
 
 # Compton
 curl -o ~/.config/compton.conf https://raw.githubusercontent.com/0xlantog/terminal-tools-settings/master/compton.conf
+
+# Start i3
+echo "startx" >> ~/.bash_profile
