@@ -46,7 +46,7 @@ mkdir ~/.config/i3status/config && curl -o ~/.config/i3status/config/i3status.co
 https://raw.githubusercontent.com/0xlantog/terminal-tools-settings/master/i3-status.conf
 
 # For Pwn and Rev
-sudo apt install gdb ltrace strace
+sudo apt install gdb ltrace strace -y
 git clone https://github.com/longld/peda.git /opt/peda
 echo "set disassembly-flavor intel\nsource /opt/peda/peda.py" > ~/.gdbinit
 
@@ -57,4 +57,4 @@ echo "set completion-ignore-case on" > ~/.inputrc
 curl -o ~/.bashrc https://raw.githubusercontent.com/0xlantog/terminal-tools-settings/master/.bashrc
 
 # Firefox
-sudo apt-get install firefox-esr
+sudo apt-get install firefox-esr -y
