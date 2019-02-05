@@ -58,3 +58,6 @@ curl -o ~/.bashrc https://raw.githubusercontent.com/0xlantog/terminal-tools-sett
 
 # Firefox
 sudo apt-get install firefox-esr -y
+
+# Colors of urxvt
+curl -o ~/.Xdefaults https://raw.githubusercontent.com/0xlantog/terminal-tools-settings/master/.Xresources
