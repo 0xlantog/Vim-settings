@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt install vim tmux git curl network-manager network-manager-gnome xorg pulseaudio -y
+sudo apt install vim tmux git curl network-manager network-manager-gnome xorg pulseaudio dmenu -y
 
 # My config files
 curl -o ~/.tmux.conf https://raw.githubusercontent.com/0xlantog/terminal-tools-settings/master/.tmux.conf
@@ -15,9 +15,6 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # Fonts
 sudo apt install fonts-roboto fonts-inconsolata -y
-
-# I3
-sudo apt install i3 i3-wm i3status i3lock compton feh rxvt-unicode-256color -y
 
 sudo chmod 777 /opt/ && cd /opt/
 
@@ -55,9 +52,6 @@ echo "set completion-ignore-case on" > ~/.inputrc
 
 # Bash profile
 curl -o ~/.bashrc https://raw.githubusercontent.com/0xlantog/terminal-tools-settings/master/.bashrc
-
-# Firefox
-sudo apt-get install firefox-esr -y
 
 # Colors of urxvt
 curl -o ~/.Xdefaults https://raw.githubusercontent.com/0xlantog/terminal-tools-settings/master/.Xresources
