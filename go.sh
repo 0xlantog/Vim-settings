@@ -17,7 +17,7 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 sudo apt install fonts-roboto fonts-inconsolata -y
 
 # I3
-sudo apt install i3 i3wm i3status i3lock compton feh rxvt-unicde-256color -y
+sudo apt install i3 i3-wm i3status i3lock compton feh rxvt-unicode-256color -y
 
 sudo chmod 777 /opt/ && cd /opt/
 
