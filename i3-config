@@ -240,4 +240,4 @@ bar {
 }
 
 # Background
-exec_always feh --bg-scale /home/giw/Wallpapers/wallpaper.jpg
+exec_always /usr/bin/feh --bg-scale $HOME/Wallpapers/wallpaper.jpg
