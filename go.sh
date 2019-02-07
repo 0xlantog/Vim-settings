@@ -7,10 +7,6 @@ curl -o ~/.tmux.conf https://raw.githubusercontent.com/0xlantog/terminal-tools-s
 curl -o ~/.vimrc https://raw.githubusercontent.com/0xlantog/terminal-tools-settings/master/.vimrc
 
 cd $HOME
-if [ ! -d ".vim" ]; then
-	mkdir -p .vim
-fi
-
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # Fonts
@@ -42,7 +38,7 @@ curl -o ~/.config/i3/config https://raw.githubusercontent.com/0xlantog/terminal-
 mkdir ~/.config/i3status/config && curl -o ~/.config/i3status/config/i3status.conf \
 https://raw.githubusercontent.com/0xlantog/terminal-tools-settings/master/i3-status.conf
 
-# For Pwn and Rev
+# Fun
 sudo apt install gdb ltrace strace -y
 git clone https://github.com/longld/peda.git /opt/peda
 echo "set disassembly-flavor intel\nsource /opt/peda/peda.py" > ~/.gdbinit
