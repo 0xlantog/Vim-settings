@@ -33,7 +33,7 @@ if [ ! -d "Wallpapers" ]; then
 fi
 
 # Background
-curl -o wallpaper.jpg https://wallpapercave.com/wp/SGiOGhl.jpg
+curl -o wallpaper.jpg https://cdn.wallpapersafari.com/51/12/0VYGBp.jpg
 
 # Configure i3
 mkdir -p ~/.config/{i3,i3status,compton}
