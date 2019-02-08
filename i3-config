@@ -39,9 +39,9 @@ client.background       $bg-color
 font pango:System San Francisco Display 10
 
 # i3-gaps
-for_window [class="^.*"] border pixel 1
-gaps inner 10
-gaps outer 10
+#for_window [class="^.*"] border pixel 1
+#gaps inner 10
+#gaps outer 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -86,8 +86,8 @@ bindsym $mod+l focus right
 bindsym $mod+Shift+l move right 30
 
 
-bindsym $mod+minus      gaps outer current plus 5
-bindsym $mod+plus       gaps outer current minus 5
+#bindsym $mod+minus      gaps outer current plus 5
+#bindsym $mod+plus       gaps outer current minus 5
 
 # Move workspaces
 bindsym $mod+less move workspace to output left
