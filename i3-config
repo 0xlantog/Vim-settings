@@ -216,8 +216,8 @@ bindsym $mod+o    resize grow width 10px or 10ppt
 # finds out, if available)
 bar {
 	# start using custom config file (full path)
-	#status_command       i3status -c ~/.config/i3status/config/i3status.conf
-  status_command  i3blocks -c ~/.config/i3blocks.conf
+	status_command       i3status -c ~/.config/i3status/config/i3status.conf
+  	#status_command  i3blocks -c ~/.config/i3blocks.conf
 	tray_padding         5
 	font pango:Roboto    9
 
