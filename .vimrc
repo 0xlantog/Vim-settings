@@ -12,13 +12,8 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 Plugin 'vim-syntastic/syntastic'
-Plugin 'nvie/vim-flake8'
-Plugin 'hdima/python-syntax'
-Plugin 'scrooloose/nerdcommenter'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'tpope/vim-surround'
-Plugin 'scrooloose/nerdtree'
-Plugin 'vim-scripts/indentpython.vim'
+
 
 let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1
@@ -54,7 +49,6 @@ syntax on
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
-set textwidth=79
 set expandtab
 set autoindent
 set fileformat=unix
@@ -63,9 +57,6 @@ set relativenumber
 set clipboard=unnamed
 set noswapfile
 set wildmode=longest,list,full
-
-autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
-autocmd FileType c set tabstop=4|set shiftwidth=4|set expandtab
 
 autocmd BufEnter *.txt set filetype=text
 autocmd FileType text set textwidth=140
