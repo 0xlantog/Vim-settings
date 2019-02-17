@@ -2,21 +2,13 @@ let mapleader = ","
 set nocompatible              " required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'jiangmiao/auto-pairs'
-
-
-let g:NERDSpaceDelims = 1
-let g:NERDCompactSexyComs = 1
+Plugin 'tpope/vim-surround'
 
 call vundle#end()            " required
 filetype plugin indent on 
@@ -39,12 +31,6 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" Enable folding
-set foldlevel=99
-
-" Enable folding with the spacebar
-nnoremap <space> za
-
 syntax on
 set tabstop=2
 set softtabstop=2
@@ -56,10 +42,6 @@ set number
 set relativenumber
 set clipboard=unnamed
 set noswapfile
-set wildmode=longest,list,full
-
-autocmd BufEnter *.txt set filetype=text
-autocmd FileType text set textwidth=140
 
 set encoding=utf-8
 
