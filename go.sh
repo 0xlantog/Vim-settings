@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt install vim tmux git curl network-manager network-manager-gnome xorg pulseaudio dmenu compton feh ranger -y
+sudo apt install vim tmux git curl network-manager network-manager-gnome xorg pulseaudio dmenu compton feh ranger unzip -y
 
 # My config files
 curl -o ~/.tmux.conf https://raw.githubusercontent.com/0xlantog/terminal-tools-settings/master/.tmux.conf
@@ -54,3 +54,9 @@ curl -o ~/.Xdefaults https://raw.githubusercontent.com/0xlantog/terminal-tools-s
 
 # Compton
 curl -o ~/.config/compton.conf https://raw.githubusercontent.com/0xlantog/terminal-tools-settings/master/compton.conf
+
+cd /tmp && wget https://github.com/FortAwesome/Font-Awesome/releases/download/5.7.2/fontawesome-free-5.7.2-web.zip
+unzip fontawesome-free-5.7.2-web.zip && cd fontawesome-free-5.7.2-web/webfonts
+mkdir $HOME/.fonts && cp *.ttf $HOME/.fonts
+
+cd $HOME
