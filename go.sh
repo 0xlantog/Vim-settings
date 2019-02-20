@@ -29,7 +29,7 @@ if [ ! -d "Wallpapers" ]; then
 fi
 
 # Background
-curl -o wallpaper.jpg https://cdn.wallpapersafari.com/51/12/0VYGBp.jpg
+curl -o wallpaper.png https://github.com/vickylai/i3-linux-config-tokyo-rice/raw/master/i3-asakusa-theme/asakusa.png
 
 # Configure i3
 mkdir -p ~/.config/{i3,i3status,compton}
@@ -39,9 +39,9 @@ mkdir ~/.config/i3status/config && curl -o ~/.config/i3status/config/i3status.co
 https://raw.githubusercontent.com/0xlantog/terminal-tools-settings/master/i3-status.conf
 
 # Fun
-sudo apt install gdb ltrace strace -y
+sudo apt install gdb ltrace strace radare2 -y
 git clone https://github.com/longld/peda.git /opt/peda
-echo "set disassembly-flavor intel\nsource /opt/peda/peda.py" > ~/.gdbinit
+echo -e "set disassembly-flavor intel\nsource /opt/peda/peda.py" > ~/.gdbinit
 
 # Bash case insensitive
 echo "set completion-ignore-case on" > ~/.inputrc
@@ -54,6 +54,3 @@ curl -o ~/.Xdefaults https://raw.githubusercontent.com/0xlantog/terminal-tools-s
 
 # Compton
 curl -o ~/.config/compton.conf https://raw.githubusercontent.com/0xlantog/terminal-tools-settings/master/compton.conf
-
-# Start i3
-echo "startx" >> ~/.bash_profile
