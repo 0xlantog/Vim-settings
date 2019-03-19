@@ -1,0 +1,17 @@
+#!/bin/bash
+
+SPACES="4"
+
+if [[ -z $1 ]]; then
+	echo "Usage: $0 <filename> <space size>"
+	exit 0
+elif [[ ! -f $1 ]]; then
+	echo "$1 is not a valid file"
+	exit 0
+fi
+
+if [[ ! -z $2 ]]; then
+	SPACES=$2
+fi
+
+sed -ri "s/^\s{$SPACES}/\t/g" "$1"

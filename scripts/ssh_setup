@@ -1,0 +1,72 @@
+#!/bin/bash
+
+function usage() {
+	echo "Usage: $0 [ -u username ] [ -i ip address ] [ -k path to key ] [ -n name of host ]" 1>&2
+	exit 1
+}
+
+while getopts ":u:i:k:n:h:" o; do
+	case "${o}" in
+		u)
+			user=${OPTARG}
+			;;
+		i)
+			ip=${OPTARG}
+			;;
+		k)
+			key_path=${OPTARG}
+			;;
+		n)
+			host_name=${OPTARG}
+			;;
+		h)
+			usage
+			;;
+		*)
+			echo "Unknown option ${OPTARG}"
+			usage
+			;;
+	esac
+done
+
+if [ -z $user ] || [ -z $ip ] || [ -z $key_path ] || [ -z $host_name ]; then
+	usage
+fi
+
+if [ ! -f $key_path ]; then
+	echo "File $key_path doesn't exists"
+	exit 1
+fi
+
+# Are you sure about that??¿¿?
+if [[ ! $key_path == *".pub" ]]; then
+	config_key=$key_path
+	key_path+=".pub"
+else
+	config_key=${key_path%.pub}
+fi
+
+ssh-copy-id -i $key_path $user@$ip &>/dev/null
+
+if [ $? -ne 0 ]; then
+	echo "Cannot copy to host the key"
+	exit 1
+else
+	echo "Copied key to remote server\n"
+fi
+
+auth_file=$HOME/.ssh/config
+
+if [ ! -f $auth_file ]; then
+	touch $auth_file
+fi
+
+cat << END >>$auth_file
+Host $host_name
+	HostName $ip
+	User $user
+	IdentityFile $config_key
+
+END
+
+echo "You can now log in to host with 'ssh $host_name'\n"

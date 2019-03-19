@@ -1,0 +1,41 @@
+# Configuración de ssh para <host>
+
+# Cuanto tiempo se tiene que pasar para que el
+# servidor se desconecte si el usuario no logro
+# hacer un login correcto
+# Esto ayuda a evitar ataques de Denegación De 
+# Servicio (Denial Of Service, DOS)
+# Se desconecta después de 60 segundos.
+LoginGraceTime 60
+
+# Se aceptan variable de 'environment' de clients
+# Esto se usa principalmente para que el cliente en 
+# que lenguaje quiero que aparezca el texto del 
+# servidor.
+AcceptEnv LANG LC_*
+
+# Se deshabilita el acceso del usuario root por ssh.
+#	Si se necesita esos privilegios se usará sudo. 
+PermitRootLogin no
+
+# Número total de intentos fallidos que puede tener
+# tener un usuario antes de que se cierre la conexión.
+# Esto no implicá que el usuario no pueda volver a 
+# hacer una conexión con el servidor.
+# Se le denegara la posibilidad de realizar conexiones
+# si se detecta que se esta haciendo un intento de 
+# fuerza bruta
+MaxAuthTries 3
+
+# Prohibe que se realize una conexión si los archivos de
+# configuración de sshd son demasiado 'permisivos'.
+StrictModes yes
+
+# Si se puede autenticar usando contraseñas
+PasswordAuthentication <password>
+
+# Usar PAM (Pluggable Authentication Modules)
+UsePAM yes
+
+# No se deja usar un sistema gráfico (la terminal es tu amiga :-))
+X11Forwarding no
