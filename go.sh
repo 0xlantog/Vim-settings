@@ -12,7 +12,7 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 # Fonts
 sudo apt install fonts-roboto fonts-inconsolata -y
 
-sudo chmod 777 /opt/ && cd /opt/
+sudo chmod 1777 /opt/ && cd /opt/
 
 # Gaps
 sudo apt install git libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev \
