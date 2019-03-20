@@ -52,7 +52,7 @@ if [ $? -ne 0 ]; then
 	echo "Cannot copy to host the key"
 	exit 1
 else
-	echo "Copied key to remote server\n"
+	printf "Copied key to remote server\n"
 fi
 
 auth_file=$HOME/.ssh/config
@@ -69,4 +69,4 @@ Host $host_name
 
 END
 
-echo "You can now log in to host with 'ssh $host_name'\n"
+printf "You can now log in to host with 'ssh $host_name'\n"
