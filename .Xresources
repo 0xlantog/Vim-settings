@@ -9,13 +9,16 @@ Xft.hintstyle:    hintslight
 
 !! Transparency settings
 URxvt.transparent:     true
-URxvt.shading:         15
+URxvt.shading:         10
 URxvt.depth:           32
 !! URxvt.inheritPixmap: true
 
 !! Fonts
-URxvt.font:        xft:Inconsolata:pixelsize=16:antialias=true,xft:monospace
-URxvt.boldFont:    xft:Inconsolata:pixelsize=16:weight=bold:antialias=true,xft:monospace
+!!URxvt.font:        xft:Monaco:pixelsize=15:antialias=true,xft:monospace
+!!URxvt.boldFont:    xft:Monaco:pixelsize=15:weight=bold:antialias=true,xft:monospace
+
+URxvt.font:        xft:PxPlus IBM VGA8:pixelsize=16:antialias=true,xft:monospace
+URxvt.boldFont:    xft:PxPlus IBM VGA8:pixelsize=16:weight=bold:antialias=true,xft:monospace
 URxvt.letterSpace: -1
 
 !! Larger history limit
@@ -28,17 +31,17 @@ URxvt.saveLines:  1000000
    URxvt.color0:     #2e1f1f
    URxvt.color8:     #bb8899
 !! red
-   URxvt.color1:     #c00c18
-   URxvt.color9:     #c62a2a
+   URxvt.color1:     #ad0009
+   URxvt.color9:     #c20e0e
 !! green
-   URxvt.color2:     #1dcd67
+   URxvt.color2:     #1ae000
    URxvt.color10:    #23d771
 !! yellow
-   URxvt.color3:     #27c282
-   URxvt.color11:    #2cdb93
+   URxvt.color3:     #d4ff26
+   URxvt.color11:    #dbd52c
 !! blue
-   URxvt.color4:     #4180c3
-   URxvt.color12:    #6071dc
+   URxvt.color4:     #2276d1
+   URxvt.color12:    #3e51cf
 !! magenta
    URxvt.color5:     #aa5566
    URxvt.color13:    #7f5aa1
